@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bookmark Landing Page</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- Fonts. -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="nav-menu-bar">
+            <img class="hamburger" src="./images/icon-hamburger.svg" alt="icon-hamburger">
+        </div>
+        <header class="all-flex-row">
+            <section class="image-logo">
+                <!-- Logo comes here -->
+                <img src="./images/logo-bookmark.svg" alt="Logo">
+
+                <!-- the close button -->
+                <img class="close-btn" src="./images/icon-close.svg" alt="icon-close">
+            </section>
+
+            <nav class="all-flex-row">
+                <a href="#" class="nav-links">Features</a>
+                <a href="#" class="nav-links">Pricing</a>
+                <a href="#" class="nav-links">Contact</a>
+                <button class="btn1">Login</button>
+            </nav>
+
+            <div class="social all-flex-row">
+                <img src="./images/icon-facebook.svg" alt="icon-facebook">
+                <img src="./images/icon-twitter.svg" alt="icon-twitter">
+            </div>
+
+        </header>
+
+        <main class="all-flex-column">
+            <!-- Section 1 -->
+            <section class="intro layout hero">
+
+                <div class="first-part layout-typo all-flex-column">
+                    <h2>A Simple Bookmark Manager</h2>
+                    <p>A clean and simple interface to organize your favourite websites. Open a new
+                        browser tab and see your sites load instantly. Try it for free.</p>
+                    <div class="button-group">
+                        <button class="btn-general">Get it on Chrome</button>
+                        <button class="btn-general">Get it on Firefox</button>
+                    </div>
+                </div>
+
+                <div class="image-background">
+                    <!-- Image comes in here. -->
+                    <img src="./images/illustration-hero.svg" alt="">
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="features all-flex-column">
+
+                <!-- Sub-Sections in Section 2 -->
+                <section class="sub-sec-typo all-flex-column">
+                    <h3>features</h3>
+                    <p> Our aim is to make it quick and easy for you to access your favourite websites.
+                        Your bookmarks sync between your devices so you can access them on the go.</p>
+                </section>
+
+                <!-- The Navigation Selection slide. -->
+                <section class="nav-selection all-flex-row">
+                    <ul class="selection all-flex-row">
+                        <li onclick="display_tabs(0)" class="select-item">Simple Bookmarking</li>
+                        <li onclick="display_tabs(1)" class="select-item">Speedy Searching</li>
+                        <li onclick="display_tabs(2)" class="select-item">Easy Sharing</li>
+                    </ul>
+                </section>
+
+                <div class="tabs">
+
+                    <section class="layout tab-1">
+                        <div class="image-background2">
+                            <img src="./images/illustration-features-tab-1.svg" alt="">
+                            <!-- Image comes here. -->
+                        </div>
+
+                        <section class="layout-typo">
+                            <h3>Bookmark in one click</h3>
+                            <p>Organize your bookmarks however you like. Our simple drag-and-drop interface
+                                gives you complete control over how you manage your favourite sites.</p>
+                            <button class="btn-general">More Info</button>
+                        </section>
+                    </section>
+
+                    <!-- THE SECTION THAT CLICKS TO GO TO OTHER TABS. -->
+                    <div class="layout tab-2 all-flex-row">
+                        <div class="image-background">
+                            <img src="./images/illustration-features-tab-2.svg" alt="tab-2-image">
+                        </div>
+
+                        <section class="layout-typo">
+                            <h3>Intelligent search</h3>
+                            <p>Our powerful search feature will help you find saved sites in no time at all.
+                                No need to trawl through all of your bookmarks.</p>
+                            <button class="btn-general">More Info</button>
+                        </section>
+                    </div>
+
+                    <div class="layout tab-3">
+                        <div class="image-background">
+                            <img src="./images/illustration-features-tab-3.svg" alt="tab-3-image">
+                        </div>
+
+                        <section class="layout-typo">
+                            <h3>Share your bookmarks</h3>
+                            <p> Easily share your bookmarks and collections with others. Create a shareable
+                                link that you can send at the click of a button.</p>
+                            <button class="btn-general">More Info</button>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="download all-flex-column">
+                <h3>Download the extension</h3>
+                <p>We’ve got more browsers in the pipeline. Please do let us know if you’ve
+                    got a favourite you’d like us to prioritize.</p>
+                <section class="layout-cmplx">
+                    <!-- Layout comes here. -->
+                    <!-- The card -->
+
+                    <!-- Card 1 -->
+                    <div class="browser-card">
+                        <section class="details">
+                            <img src="./images/logo-chrome.svg" alt="">
+                            <h4>Add to Chrome</h4>
+                            <p>Minimum version 62</p>
+                        </section>
+
+                        <section class="cta">
+                            <button class="btn-general">Add & Install Extension</button>
+                        </section>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="browser-card">
+                        <section class="details">
+                            <img src="./images/logo-firefox.svg" alt="">
+                            <h4>Add to Firefox</h4>
+                            <p>Minimum version 55</p>
+                        </section>
+
+                        <section class="cta">
+                            <button class="btn-general">Add & Install Extension</button>
+                        </section>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="browser-card">
+                        <section class="details">
+                            <img src="./images/logo-opera.svg" alt="">
+                            <h4>Add to Opera</h4>
+                            <p>Minimum version 46</p>
+                        </section>
+
+                        <section class="cta">
+                            <button class="btn-general">Add & Install Extension</button>
+                        </section>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="faq">
+                <!-- For wrapping contents into the center. -->
+                <div class="faq-wrapper all-flex-column">
+                    <h3>Frequently Asked Questions</h3>
+                    <p>Here are some of our FAQs. If you have any other questions you’d like
+                        answered please feel free to email us.</p>
+
+                    <section class="accordion">
+                        <!-- Accordion to be manipulated with Javascript. -->
+                        <ul class="accordion-container all-flex-column">
+                            <li class="accordion-items">
+                                <div class="display1">
+                                    <span class="first">What is Bookmark?</span> <span class="second"><img
+                                            src="./images/icon-arrow.svg" alt=""></span>
+                                </div>
+
+                                <div class="display2">
+                                    <p class="text">
+                                        Bookmark is a software on the browser, that allows you to save webpages on the
+                                        browser, to be accessible, by you later when you need it.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="accordion-items">
+                                <div class="display1">
+                                    <span class="first">How can I request a new browser?</span>
+                                    <span class="second"><img src="./images/icon-arrow.svg" alt=""></span>
+                                </div>
+
+                                <div class="display2">
+                                    <p class="text">
+                                        You can request a new browser by downloading the browser that you desire to use,
+                                        and then setting it as your default browser, for saving webpages on.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="accordion-items">
+                                <div class="display1">
+                                    <span class="first">Is there a mobile app?</span> <span class="second"><img
+                                            src="./images/icon-arrow.svg" alt=""></span>
+                                </div>
+
+                                <div class="display2">
+                                    <p class="text">
+                                        Yes, there's a mobile application, and you can download it on the Play Store, or
+                                        the App Store depending on your OS, and also based on the compatibilty of your
+                                        device with the application.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="accordion-items">
+                                <div class="display1">
+                                    <span class="first">What about other Chromium browsers?</span>
+                                    <span class="second"><img src="./images/icon-arrow.svg" alt=""></span>
+                                </div>
+
+                                <div class="display2">
+                                    <p class="text">
+                                        Other Chromium browsers have no problem working with Bookmark, for we work with
+                                        Google.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <button class="btn-general">More Info</button>
+                </div>
+            </section>
+    </div>
+    <section class="pre-footer">
+        <img src="./images/icon-arrow-down.svg" alt="">
+        <div class="pre-footer-content all-flex-column">
+
+            <span class="info">35,000+ already joined</span>
+
+            <h2>Stay up-to-date with what we're doing</h2>
+
+            <div class="form">
+                <form class="all-flex-row" action="#" id="form">
+                    <div class="input-container">
+                        <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                        <img src="./images/icon-error.svg" alt="Error-icon" class="error-icon">
+                        <!-- validation process. -->
+                        <p class='error'>
+                            <span class="error-msg">
+                                Whoops, make sure it's an email
+                            </span>
+                        </p>
+                    </div>
+                    <button class="btn1">
+                        Contact Us
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- THE FOOTER -->
+    <footer class="all-flex-column">
+        <section class="main-footer all-flex-row">
+            <div class="details-footer all-flex-row">
+
+                <section class="image-logo">
+                    <!-- Logo comes here -->
+                    <img src="./images/footer-logo.svg" alt="">
+                </section>
+
+                <div class="nav all-flex-row">
+                    <a href="#" class="nav-links">Features</a>
+                    <a href="#" class="nav-links">Pricing</a>
+                    <a href="#" class="nav-links">Contact</a>
+                </div>
+            </div>
+
+            <div class="social all-flex-row">
+                <img src="./images/icon-facebook.svg" alt="icon-facebook">
+                <img src="./images/icon-twitter.svg" alt="icon-twitter">
+            </div>
+        </section>
+    </footer>
+
+    <script src="./app.js"></script>
+    <script src="./tabs.js"></script>
+</body>
+
+</html>

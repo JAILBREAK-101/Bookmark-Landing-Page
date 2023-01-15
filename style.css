@@ -1,0 +1,714 @@
+:root {
+    --primary-color: hsl(231, 69%, 60%);
+    --secondary-color: hsl(0, 94%, 66%);
+    --text-color: hsl(229, 8%, 60%);
+    --main-color-deep: hsl(229, 31%, 21%);
+    --main-color-deep-bg: hsla(229, 31%, 21%, 0.837);
+
+    /* For Box-Shadow */
+    --btn-box-shadow: hsl(229, 8%, 60%, .4);
+}
+
+/* FORM VALIDATION */
+/* input[type='email']:focus:invalid {
+    border: 2px solid var(--secondary-color);
+} */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+/* Main Stying, from the wrapper. */
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 2em 6em;
+    /* To be set lower for the remaining layout properties. */
+}
+
+/* GENERAL FLEX PROPERTY FOR LAYOUTS. */
+.all-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.all-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ---------------------------------- */
+
+header {
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav,
+.nav {
+    gap: 1.7em;
+    align-items: center;
+}
+
+nav>*,
+.nav>* {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    /* gap: 3rem; */
+    font-size: .8rem;
+}
+
+main {
+    gap: 4rem;
+}
+
+/* The Layout Section. */
+/* The Layout of the Intro Section. */
+.intro,
+.layout {
+    display: grid;
+    padding: 0;
+    gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.hero {
+    gap: 1rem;
+}
+
+/* Sections with the same class, and also similar styles. */
+.first-part,
+.layout-typo {
+    /* For parent font-size. */
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: baseline;
+}
+
+/* ALL H2s, FIRST SECTION HEADER, AND ALL H3s */
+h2,
+h3 :is(.first-part,
+    .layout-typo),
+h3 {
+    font-size: 1.3em;
+    margin: 0;
+    max-width: 30ch;
+}
+
+/* -------------------------------------------- */
+.layout-typo h3 {
+    font-size: 1.5rem;
+}
+
+.layout-typo p {
+    font-size: .4em;
+    width: 100%;
+    margin-bottom: 1.5em;
+    max-width: 50ch;
+    color: var(--text-color);
+    text-align: left;
+    font-weight: 500;
+}
+
+/* The First Background */
+
+.image-background {
+    background-image: url(./images/);
+}
+
+/* END OF LAYOUT TYPO */
+
+/* The Features Section */
+.features,
+.faq {
+    margin: 2em;
+    gap: 2rem;
+    align-items: center;
+}
+
+.sub-sec-typo {
+    text-align: center;
+    align-self: center;
+}
+
+.sub-sec-typo h3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: inline-block;
+    margin: 0;
+    align-self: center;
+}
+
+.sub-sec-typo p {
+    max-width: 60ch;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin-bottom: 2em;
+}
+
+/* The Navigation Selection Section. */
+.nav-selection {
+    --justify-content: center;
+    border-bottom: 1px solid black;
+    padding: 0 0 .2rem 0;
+    border-color: var(--text-color);
+    justify-content: var(--justify-content);
+}
+
+.selection {
+    list-style: none;
+    justify-content: var(--justify-content);
+    align-items: center;
+    gap: 3rem;
+    padding: 0;
+}
+
+.select-item {
+    line-height: 1.5;
+    font-weight: 600;
+    position: relative;
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: .2s color;
+}
+
+.select-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.select-item:nth-of-type(2):focus {
+    color: blue;
+}
+
+/* 
+.select-item:hover {
+    color: black;
+}
+
+.select-item .select-item::after {
+    transition: all 2s;
+}
+
+.select-item::after {
+    max-width: 100%;
+    display: block;
+    color: red;
+    position: absolute;
+    min-height: 40%;
+    bottom: 0;
+    top: 40px;
+    transform-origin: left;
+    transform: translateX(-2px);
+}
+
+.select-item:nth-of-type(1):hover:after {
+    content: "______________________";
+}
+ */
+/* PSEUDO CLASS, BEFORE PSEUDO ELEMENT. */
+
+/* .select-item:nth-of-type(2):hover::after {
+    content: '___________________';
+}
+
+.select-item:nth-of-type(3):hover::after {
+    content: '______________';
+} */
+
+.tab-2,
+.tab-3 {
+    display: none;
+}
+
+/* END OF FEATURES SECTION */
+
+
+/* The Download Section. */
+.download {
+    align-items: center;
+}
+
+.download h3 {
+    font-size: 1.3rem;
+}
+
+.download p {
+    font-size: medium;
+    color: var(--text-color);
+    max-width: 60ch;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+/* The Bookmark Section. */
+
+/* The Cards Section. */
+.layout-cmplx {
+    display: flex;
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* justify-content: center; */
+    gap: 2em;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Each items for the complex layout. */
+.browser-card {
+    /* position: absolute; */
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, .09);
+    background-image: url(./images/bg-dots.svg);
+    background-repeat: no-repeat;
+    background-position: 0 70%;
+}
+
+.browser-card p {
+    margin-bottom: 50px;
+    font-size: .9em;
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.browser-card:nth-child(1) {
+    position: relative;
+    top: 0px;
+}
+
+.browser-card:nth-child(2) {
+    position: relative;
+    top: 30px;
+}
+
+.browser-card:nth-child(3) {
+    position: relative;
+    top: 50px;
+}
+
+/* END OF DOWNLOAD SECTION */
+
+/* The Accordion Section and FAQ section. */
+.faq-wrapper {
+    font-size: 1.5rem;
+    align-items: center;
+    gap: .9rem;
+}
+
+.faq-wrapper>h3 {
+    font-size: .9em;
+    margin: 0;
+}
+
+.faq-wrapper>p {
+    font-size: .6em;
+    max-width: 50ch;
+    color: var(--text-color);
+}
+
+/* The accordion proper. */
+.accordion {
+    border-top: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* The accordion items. */
+.accordion-container {
+    list-style: none;
+    width: 100%;
+    align-items: flex-start;
+    gap: 1.5rem;
+    font-size: .9rem;
+    padding: 0;
+}
+
+/* For the Positioning of the Pickup Button. */
+.accordion-items {
+    position: relative;
+}
+
+.accordion-items:nth-of-type(1),
+.accordion-items:nth-of-type(3) {
+    justify-content: space-between;
+    line-height: 1.5;
+    padding-bottom: .6em;
+    width: 100%;
+    border-bottom: 1px solid var(--text-color, .1);
+    text-align: left;
+}
+
+.accordion-items:nth-of-type(2),
+.accordion-items:nth-of-type(4) {
+    justify-content: space-between;
+    line-height: 1.5;
+    width: 100%;
+    padding-bottom: .6em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    text-align: left;
+}
+
+.accordion-items:nth-of-type(4) {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.accordion-items .second {
+    cursor: pointer;
+}
+
+.first,
+.second {
+    display: block;
+}
+
+.display1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+/* For opening and closing of the accordion. */
+
+/* The Contents in the Accordion items. */
+/* Hiding it, to manipulate, with Javascript. */
+.display2 {
+    margin-top: 1.4em;
+    transition: all 2s;
+    display: none;
+}
+
+.display2 p {
+    width: 100%;
+    max-width: 50ch;
+    margin: 0;
+}
+
+/* THE DROPDOWN ICONS FOR THE ACCORDION (FAQ) */
+.pick-up-img {
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.pick-up {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 10px;
+    width: 20px;
+}
+
+/* END OF ACCORDION AND FAQ SECTION */
+
+
+/* The Pre Footer Section. */
+footer {
+    align-items: center;
+    justify-content: center;
+    /* gap: 4rem; */
+}
+
+.pre-footer,
+.main-footer {
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 3rem 4rem;
+    color: white;
+}
+
+.info {
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: 6px;
+
+}
+
+.pre-footer-content {
+    align-items: center;
+    gap: 2rem;
+}
+
+.pre-footer-content h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+    max-width: 25ch;
+}
+
+/* Moving unto the form input */
+form {
+    align-items: center;
+    gap: .6rem;
+    position: relative;
+}
+
+.input-container {
+    grid-column: 1/3;
+    max-width: 100%;
+}
+
+form p {
+    color: white;
+    background: var(--secondary-color);
+    margin-top: 0;
+    font-size: .9rem;
+    font-style: italic;
+    padding: .5em;
+    position: relative;
+    bottom: 5px;
+}
+
+/* The Form Button */
+form .btn1 {
+    max-width: 100%;
+    align-self: center;
+}
+
+input[type='email'] {
+    position: relative;
+}
+
+.error-msg {
+    text-align: left;
+    font-size: .6rem;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+/* The Icon. */
+.error-icon {
+    position: absolute;
+    right: 110px;
+    top: 10px;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    padding: .8rem 1.2rem;
+    /* margin-right: 5px; */
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* The Footer Section.*/
+.main-footer {
+    background-color: var(--main-color-deep);
+    padding: 2rem;
+    justify-content: space-around;
+}
+
+.details-footer {
+    align-items: center;
+    gap: 2rem;
+}
+
+.social {
+    gap: 2rem;
+}
+
+/* END OF FOOTER SECTION */
+
+/* The Buttons Section.*/
+/* The Button */
+button {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn1 {
+    border: 0;
+    background-color: ;
+    padding: 1.1em;
+    color: ;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    font-size: .7rem;
+}
+
+
+.btn-general {
+    border: 0;
+    background: ;
+    padding: .9em 1em;
+    color: white;
+    font-size: .9rem;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+}
+
+.btn-general:nth-of-type(2) {
+    background: whitesmoke;
+    color: var(--text-color);
+    box-shadow: 0 5px 18px 0 var(--btn-box-shadow);
+}
+
+/* The Second Button (White one) */
+
+
+/* Responsiveness with Media Queries. */
+@media(max-width: 600px) {
+    .wrapper {
+        padding: 1em 4em;
+        position: relative;
+    }
+
+    /* MOBILE NAVIGAITON MENU */
+    header.all-flex-row {
+        background: var(--main-color-deep-bg);
+        flex-direction: column;
+        position: fixed;
+        min-height: 100%;
+        z-index: 100;
+        padding: 2rem;
+        /* inset: 0; */
+        /* bottom: 0%; */
+        right: 0%;
+        left: 0%;
+        top: 0%;
+        /* justify-content: center; */
+    }
+
+    .image-logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .image-logo:nth-child(1) {
+        filter: brightness(50);
+    }
+
+    .close-btn {
+        cursor: pointer;
+    }
+
+    nav.all-flex-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.all-flex-row>a {
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid var(--text-color);
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: white;
+        padding-top: 1rem;
+    }
+
+    nav.all-flex-row a:nth-child(3) {
+        border-bottom: 1px solid var(--text-color);
+        padding-bottom: 1rem;
+    }
+
+    .btn1 {
+        width: 100%;
+        background: none;
+        border: 3px solid white;
+        font-size: 1rem;
+        color: white;
+    }
+
+    /* END OF MOVILE NAVIGATION MENU */
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .layout-typo p {
+        line-height: 1.5;
+        font-size: .6em;
+        max-width: 50ch;
+    }
+
+
+    .intro,
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .first-part,
+    .layout-typo {
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .first-part p,
+    .layout-typo p {
+        text-align: center;
+    }
+
+    .first-part,
+    .layout-typo {
+        text-align: center;
+    }
+
+    .image-background {
+        grid-row: 1 / 2;
+        /* width: 500px; */
+    }
+
+    .image-background img,
+    .image-background2 img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+
+    .layout-typo p {
+        padding: 0;
+        margin: 0 0 1.5em 0
+    }
+
+    /* FOR THE PRE-FOOTER. */
+    form {
+        grid-template-columns: 1fr;
+        gap: .2rem;
+        flex-direction: column;
+    }
+
+    input {
+        grid-column: 1;
+    }
+
+    .layout-cmplx {
+        flex-direction: column;
+    }
+}
