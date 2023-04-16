@@ -4,6 +4,8 @@
     --text-color: hsl(229, 8%, 60%);
     --main-color-deep: hsl(229, 31%, 21%);
     --main-color-deep-bg: hsla(229, 31%, 21%, 0.837);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
 
     /* For Box-Shadow */
     --btn-box-shadow: hsl(229, 8%, 60%, .4);
@@ -29,6 +31,20 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hidden {
+    display: none;
+}
+
 /* Main Stying, from the wrapper. */
 .wrapper {
     height: 100%;
@@ -36,7 +52,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    padding: 2em 6em;
+    padding: 2em 3em;
     /* To be set lower for the remaining layout properties. */
 }
 
@@ -46,32 +62,55 @@ body {
     flex-direction: column;
 }
 
-.all-flex-row {
+.all-flex-row,
+.nav-items-container,
+.footer-nav {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.7em;
 }
 
-/* ---------------------------------- */
+/* .header {
+    gap: 5rem;
+} */
 
-header {
-    justify-content: space-between;
-    gap: 2rem;
-    align-items: center;
+.nav-menu-bar,
+.nav-menu-close {
+    display: none;
+}
+
+.nav-bar-checkbox,
+.nav-close-checkbox {
+    visibility: hidden;
 }
 
 nav,
 .nav {
-    gap: 1.7em;
     align-items: center;
 }
 
 nav>*,
 .nav>* {
     text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     /* gap: 3rem; */
-    font-size: .8rem;
+    font-size: .7rem;
+}
+
+.nav-link {
+    color: var(--main-color-deep);
+}
+
+.footer-nav-link {
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.social {
+    display: none;
 }
 
 main {
@@ -104,6 +143,7 @@ main {
 }
 
 /* ALL H2s, FIRST SECTION HEADER, AND ALL H3s */
+h1,
 h2,
 h3 :is(.first-part,
     .layout-typo),
@@ -111,28 +151,29 @@ h3 {
     font-size: 1.3em;
     margin: 0;
     max-width: 30ch;
+    color: var(--main-color-deep);
 }
 
-/* -------------------------------------------- */
 .layout-typo h3 {
     font-size: 1.5rem;
 }
 
 .layout-typo p {
-    font-size: .4em;
+    font-size: 0.5em;
     width: 100%;
     margin-bottom: 1.5em;
     max-width: 50ch;
     color: var(--text-color);
     text-align: left;
     font-weight: 500;
+    line-height: 1.5;
 }
 
 /* The First Background */
-
+/* 
 .image-background {
     background-image: url(./images/);
-}
+} */
 
 /* END OF LAYOUT TYPO */
 
@@ -164,16 +205,16 @@ h3 {
     line-height: 1.5;
     color: var(--text-color);
     margin-bottom: 2em;
+    line-height: 1.5;
 }
 
 /* The Navigation Selection Section. */
-.nav-selection {
+/* .nav-selection {
     --justify-content: center;
-    border-bottom: 1px solid black;
     padding: 0 0 .2rem 0;
     border-color: var(--text-color);
     justify-content: var(--justify-content);
-}
+} */
 
 .selection {
     list-style: none;
@@ -199,18 +240,15 @@ h3 {
 }
 
 .select-item:nth-of-type(2):focus {
-    color: blue;
-}
-
-/* 
-.select-item:hover {
-    color: black;
+    /* border-bottom: 1px solid var(--text-color); */
+    color: var(--primary-color);
 }
 
 .select-item .select-item::after {
-    transition: all 2s;
+    transition: border-bottom 2s;
 }
 
+/*
 .select-item::after {
     max-width: 100%;
     display: block;
@@ -259,17 +297,12 @@ h3 {
     color: var(--text-color);
     max-width: 60ch;
     text-align: center;
+    line-height: 1.5;
 }
 
-/* ------------------------------------------------------------------------------- */
-
-/* The Bookmark Section. */
-
-/* The Cards Section. */
+/* The Bookmark Card Cards Section. */
 .layout-cmplx {
     display: flex;
-    /* grid-template-columns: repeat(3, 1fr); */
-    /* justify-content: center; */
     gap: 2em;
     justify-content: center;
     align-items: center;
@@ -326,6 +359,8 @@ h3 {
 .faq-wrapper>p {
     font-size: .6em;
     max-width: 50ch;
+    text-align: center;
+    line-height: 1.5;
     color: var(--text-color);
 }
 
@@ -390,7 +425,8 @@ h3 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0;
-    padding: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 /* For opening and closing of the accordion. */
@@ -426,8 +462,6 @@ h3 {
 
 /* END OF ACCORDION AND FAQ SECTION */
 
-
-/* The Pre Footer Section. */
 footer {
     align-items: center;
     justify-content: center;
@@ -446,7 +480,6 @@ footer {
     text-transform: uppercase;
     font-size: .7rem;
     letter-spacing: 6px;
-
 }
 
 .pre-footer-content {
@@ -462,10 +495,11 @@ footer {
 }
 
 /* Moving unto the form input */
-form {
+#form {
     align-items: center;
-    gap: .6rem;
+    gap: 2rem;
     position: relative;
+    width: 100%;
 }
 
 .input-container {
@@ -473,7 +507,7 @@ form {
     max-width: 100%;
 }
 
-form p {
+#form p {
     color: white;
     background: var(--secondary-color);
     margin-top: 0;
@@ -485,9 +519,12 @@ form p {
 }
 
 /* The Form Button */
-form .btn1 {
+#form .btn1 {
     max-width: 100%;
     align-self: center;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: 0;
 }
 
 input[type='email'] {
@@ -501,16 +538,12 @@ input[type='email'] {
     border-radius: 10px;
 }
 
-/* The Icon. */
+/* The Error Icon. */
 .error-icon {
     position: absolute;
     right: 110px;
     top: 10px;
     z-index: 1;
-}
-
-.hidden {
-    display: none;
 }
 
 input {
@@ -525,10 +558,14 @@ input {
 }
 
 /* The Footer Section.*/
-.main-footer {
+.footer {
     background-color: var(--main-color-deep);
+}
+
+.footer-container {
     padding: 2rem;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .details-footer {
@@ -536,14 +573,15 @@ input {
     gap: 2rem;
 }
 
+.pre-footer h2 {
+    color: var(--white);
+}
+
 .social {
     gap: 2rem;
 }
 
 /* END OF FOOTER SECTION */
-
-/* The Buttons Section.*/
-/* The Button */
 button {
     cursor: pointer;
     font-weight: 600;
@@ -551,18 +589,18 @@ button {
 
 .btn1 {
     border: 0;
-    background-color: ;
-    padding: 1.1em;
-    color: ;
+    background-color: var(--secondary-color);
+    padding: 0.8em 1.5em;
+    color: var(--white);
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .1);
     border-radius: 5px;
-    font-size: .7rem;
+    font-size: .8rem;
+    font-weight: 600;
 }
 
 
 .btn-general {
     border: 0;
-    background: ;
     padding: .9em 1em;
     color: white;
     font-size: .9rem;
@@ -576,87 +614,8 @@ button {
     box-shadow: 0 5px 18px 0 var(--btn-box-shadow);
 }
 
-/* The Second Button (White one) */
-
-
 /* Responsiveness with Media Queries. */
-@media(max-width: 600px) {
-    .wrapper {
-        padding: 1em 4em;
-        position: relative;
-    }
-
-    /* MOBILE NAVIGAITON MENU */
-    header.all-flex-row {
-        background: var(--main-color-deep-bg);
-        flex-direction: column;
-        position: fixed;
-        min-height: 100%;
-        z-index: 100;
-        padding: 2rem;
-        /* inset: 0; */
-        /* bottom: 0%; */
-        right: 0%;
-        left: 0%;
-        top: 0%;
-        /* justify-content: center; */
-    }
-
-    .image-logo {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .image-logo:nth-child(1) {
-        filter: brightness(50);
-    }
-
-    .close-btn {
-        cursor: pointer;
-    }
-
-    nav.all-flex-row {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav.all-flex-row>a {
-        text-align: center;
-        width: 100%;
-        border-top: 1px solid var(--text-color);
-        font-size: 1.3rem;
-        font-weight: 500;
-        color: white;
-        padding-top: 1rem;
-    }
-
-    nav.all-flex-row a:nth-child(3) {
-        border-bottom: 1px solid var(--text-color);
-        padding-bottom: 1rem;
-    }
-
-    .btn1 {
-        width: 100%;
-        background: none;
-        border: 3px solid white;
-        font-size: 1rem;
-        color: white;
-    }
-
-    /* END OF MOVILE NAVIGATION MENU */
-
-    h2 {
-        font-size: 1em;
-    }
-
-    .layout-typo p {
-        line-height: 1.5;
-        font-size: .6em;
-        max-width: 50ch;
-    }
-
+@media(max-width: 1000px) {
 
     .intro,
     .layout {
@@ -668,6 +627,11 @@ button {
     .layout-typo {
         align-items: center;
         gap: 1rem;
+    }
+
+    .layout-typo p {
+        line-height: 1.5;
+        max-width: 50ch;
     }
 
     .first-part p,
@@ -685,20 +649,121 @@ button {
         /* width: 500px; */
     }
 
+    .image-logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* The tabs */
+    .layout {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media(max-width: 760px) {
+    .wrapper {
+        padding: 2em;
+        position: relative;
+    }
+
+    .nav-items-container {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* MOBILE NAVIGAITON MENU */
+    .nav-menu-bar,
+    .nav-menu-close {
+        cursor: pointer;
+    }
+
+    .nav-menu-bar {
+        display: block;
+    }
+
+    /* open-menu */
+    .open-nav {
+        background: var(--main-color-deep-bg);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: fixed;
+        min-height: 100%;
+        z-index: 100;
+        padding: 2rem;
+        right: 0%;
+        left: 0%;
+        top: 0%;
+        /* justify-content: center; */
+    }
+
+    .open-nav .nav-items-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .open-nav .social {
+        display: flex;
+    }
+
+    .open-nav .nav-menu-bar {
+        display: none;
+    }
+
+    .open-nav .nav-menu-close {
+        display: block;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        color: var(--white);
+        text-align: center;
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: white;
+        padding-top: 1rem;
+    }
+
+    nav.all-flex-row a:nth-child(3) {
+        border-bottom: 1px solid var(--text-color);
+        padding-bottom: 1rem;
+    }
+
+    .open-nav .image-logo:nth-child(1) {
+        filter: brightness(50);
+    }
+
+    h1 {
+        font-size: 1em;
+    }
+
+    .btn1 {
+        width: 100%;
+        background: none;
+        border: 3px solid white;
+        font-size: 1rem;
+        color: white;
+    }
+
+    /* hero section and the main section */
     .image-background img,
     .image-background2 img {
         object-fit: cover;
         width: 100%;
     }
 
-
-    .layout-typo p {
-        padding: 0;
-        margin: 0 0 1.5em 0
+    .selection {
+        flex-direction: column;
     }
 
     /* FOR THE PRE-FOOTER. */
-    form {
+    #form {
         grid-template-columns: 1fr;
         gap: .2rem;
         flex-direction: column;
@@ -709,6 +774,12 @@ button {
     }
 
     .layout-cmplx {
+        flex-direction: column;
+    }
+
+    .footer-container,
+    .details-footer,
+    .footer-nav {
         flex-direction: column;
     }
 }

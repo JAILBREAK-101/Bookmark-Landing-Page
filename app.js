@@ -1,5 +1,21 @@
 // THE NAVIGATION BAR.
-const toggle_menu = document.getElementsByClassName('.hamburger')[0]
+const navigation = document.querySelector(".nav");
+const navBar = document.querySelector(".nav-menu-bar");
+const closeNavBar = document.querySelector(".nav-menu-close");
+
+let handleOpenNavBar = () => {
+  navigation.classList.add("open-nav");
+  console.log("OPEN NAV");
+};
+
+let handleCloseNavBar = () => {
+  navigation.classList.remove("open-nav");
+};
+
+navBar.addEventListener("click", handleOpenNavBar);
+closeNavBar.addEventListener("click", handleCloseNavBar);
+
+// const toggle_menu = document.getElementsByClassName(".hamburger")[0];
 // const navigation_links = document.getElementsByClassName()
 
 // The Accordion.

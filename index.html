@@ -9,29 +9,37 @@
 
 <body>
     <div class="wrapper">
-        <div class="nav-menu-bar">
-            <img class="hamburger" src="./images/icon-hamburger.svg" alt="icon-hamburger">
-        </div>
-        <header class="all-flex-row">
-            <section class="image-logo">
-                <!-- Logo comes here -->
-                <img src="./images/logo-bookmark.svg" alt="Logo">
+        <header class="header">
+            <input type="checkbox" name="nav-menu-bar" id="nav-menu-bar" class="nav-bar-checkbox">
+            <input type="checkbox" name="nav-menu-bar" id="nav-menu-close" class="nav-close-checkbox">
+            <nav class="nav all-flex-row">
+                <section class="image-logo">
+                    <!-- Logo comes here -->
+                    <img src="./images/logo-bookmark.svg" alt="Logo">
 
-                <!-- the close button -->
-                <img class="close-btn" src="./images/icon-close.svg" alt="icon-close">
-            </section>
+                    <!-- the close button -->
+                    <label for="nav-menu-close" class="nav-menu-close">
+                        <img class="close-btn" src="./images/icon-close.svg" alt="icon-close">
+                    </label>
+                </section>
 
-            <nav class="all-flex-row">
-                <a href="#" class="nav-links">Features</a>
-                <a href="#" class="nav-links">Pricing</a>
-                <a href="#" class="nav-links">Contact</a>
-                <button class="btn1">Login</button>
+                <label class="nav-menu-bar" for="nav-menu-bar">
+                    <img class="hamburger" src="./images/icon-hamburger.svg" alt="icon-hamburger">
+                </label>
+                <ul class="nav-items-container">
+                    <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <button class="btn1">Login</button>
+                </ul>
+
+                <div class="social all-flex-row">
+                    <a href="" class="social-link"><img src="./images/icon-facebook.svg" alt="icon-facebook"></a>
+                    <a href="" class="social-link">
+                        <img src="./images/icon-twitter.svg" alt="icon-twitter"></a>
+                </div>
             </nav>
 
-            <div class="social all-flex-row">
-                <img src="./images/icon-facebook.svg" alt="icon-facebook">
-                <img src="./images/icon-twitter.svg" alt="icon-twitter">
-            </div>
 
         </header>
 
@@ -40,7 +48,7 @@
             <section class="intro layout hero">
 
                 <div class="first-part layout-typo all-flex-column">
-                    <h2>A Simple Bookmark Manager</h2>
+                    <h1>A Simple Bookmark Manager</h1>
                     <p>A clean and simple interface to organize your favourite websites. Open a new
                         browser tab and see your sites load instantly. Try it for free.</p>
                     <div class="button-group">
@@ -273,23 +281,23 @@
     </main>
 
     <!-- THE FOOTER -->
-    <footer class="all-flex-column">
-        <section class="main-footer all-flex-row">
+    <footer class="footer all-flex-column">
+        <section class="footer-container all-flex-row">
             <div class="details-footer all-flex-row">
 
-                <section class="image-logo">
+                <section class="footer-image-logo">
                     <!-- Logo comes here -->
                     <img src="./images/footer-logo.svg" alt="">
                 </section>
 
-                <div class="nav all-flex-row">
-                    <a href="#" class="nav-links">Features</a>
-                    <a href="#" class="nav-links">Pricing</a>
-                    <a href="#" class="nav-links">Contact</a>
-                </div>
+                <ul class="footer-nav all-flex-row">
+                    <li class="footer-nav-item"><a href="#" class="footer-nav-link">Features</a></li>
+                    <li class="footer-nav-item"><a href="#" class="footer-nav-link">Pricing</a></li>
+                    <li class="footer-nav-item"><a href="#" class="footer-nav-link">Contact</a></li>
+                </ul>
             </div>
 
-            <div class="social all-flex-row">
+            <div class="footer-social all-flex-row">
                 <img src="./images/icon-facebook.svg" alt="icon-facebook">
                 <img src="./images/icon-twitter.svg" alt="icon-twitter">
             </div>
